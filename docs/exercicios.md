@@ -32,13 +32,6 @@
 13. FUP que solicite um numero e veja se ele é par ou impar;
     Dica: Pares ou Ímpares? Utilize:
 
-```C++
-    if (num%2==0)
-        cout<<"\n " << num<< " é Par";
-    else
-        cout<<"\n " << num<< " é Ímpar";
-```
-
 14. FUP que solicite dois numero e verifique qual é o maior;
 15. FUP que leia 3 valores a,b,c e verifique se eles formam ou não um triângulo. Caso os valores formem um triângulo, solicite a base e a altura, calcule (base * altura / 2) e escreva a área deste triângulo. Se não formam triângulo escreva os valores lidos. 
 16. FUP que calcule o imposto de renda de um contribuinte. Os dados de entrada são: o CPF(int), o número de dependentes e a renda mensal. Para cada dependente será feito um desconto de 5% do salário mínimo por dependente. Os valores da alíquota para cálculo do imposto são:
