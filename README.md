@@ -5,4 +5,9 @@ Ele conterá todos os exemplo utilizados na aula de Programação WEB.
 
 TechStack: NodeJs + JavaScript.
 
-Objetivo Fim: Construir API's utilizando padrão de arquitetura REST.
+> Objetivo Fim: Construir API's utilizando padrão de arquitetura REST.
+
+# Exercícios
+
+Se encontram na pasta docs, tanto a lista principal [exercícios.md](./docs/exercicios.md) quanto a 
+lista extra em [lista-extra.md](./docs/lista-extra.md)
