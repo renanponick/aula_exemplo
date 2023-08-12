@@ -11,3 +11,18 @@ TechStack: NodeJs + JavaScript.
 
 Se encontram na pasta docs, tanto a lista principal [exercícios.md](./docs/exercicios.md) quanto a 
 lista extra em [lista-extra.md](./docs/lista-extra.md)
+
+# Inicialização
+
+Para utilizar este repositório, você precisa instalar o NodeJS em sua máquina.
+Após, clona-lo e executar os seguintes comando no terminal.
+
+- Instalando todos as dependencias:
+```bash
+npm i
+```
+
+- Inicializando o servidor:
+```bash
+npm start
+```
