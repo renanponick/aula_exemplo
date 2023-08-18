@@ -1,14 +1,14 @@
 import express from 'express'
+import { somar } from './exercicios/um.js'
 
 const app = express()
+app.use(express.json())
 const port = 3000
 
-app.get('/api/', (req, res) => {
-    const num1 = req.query.num1
-    const num2 = req.query.num2
-
-    res.json({
-        message: `resultado: ${num1 + num2}`
+app.post('/api/exercicio', (req, res) => {
+    const result = somar(req.body.num1, req.body.num2)
+    res.status(200).json({
+        message: `resultado: ${result}`
     })
 })
 
