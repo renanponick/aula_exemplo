@@ -1,7 +1,7 @@
-import express from 'express'
-import { somar } from './exercicios/um.js'
-import { sub } from './exercicios/dois.js'
-import { div } from './exercicios/tres.js'
+const express = require('express')
+const { somar } = require('./exercicios/um.js')
+const { sub } = require('./exercicios/dois.js')
+const { div } = require('./exercicios/tres.js')
 
 const app = express()
 app.use(express.json())
