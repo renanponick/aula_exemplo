@@ -2,6 +2,7 @@ const express = require('express')
 const { somar } = require('./exercicios/um.js')
 const { sub } = require('./exercicios/dois.js')
 const { div } = require('./exercicios/tres.js')
+const { calcularMedia } = require('./exercicios/nove.js')
 
 const app = express()
 app.use(express.json())
@@ -26,6 +27,15 @@ app.post('/api/exercicio3', (req, res) => {
     res.status(200).json({
         message: `resultado: ${result}`
     })
+})
+
+app.post('/api/exercicio9', (req, res) => {
+    const nome = req.body.nome;
+    const notas = req.body.notas;
+
+    const result = calcularMedia(notas, nome)
+    
+    res.json(result)
 })
 
 
