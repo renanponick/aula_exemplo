@@ -1,33 +1,21 @@
 const { describe, expect, it } = require('@jest/globals')
-const { sub } = require('../exercicios/dois.js')
-const { calcularMedia } = require('../exercicios/nove.js')
+const ServicoExercicio = require("../src/services/exercicio")
 
 describe('Testes do primeiro exercício', () => {
+   
+   const servico = new ServicoExercicio()
+
    it('Should sum two numbers', () => {
-      const result = sub(1, 2)
+      const result = servico.Somar(1, 2)
       
-      expect(result).toBe(-1);
+      expect(result).toBe(3);
    })
 
-   it('Should sum three grades and divide by three if approved', () => {
-      const expected = { media: 8, message: "Aprovado" }
-      const result = calcularMedia([7,8,9], 'joao')
-
-      expect(result).toEqual(expected)
-   })
-
-   it('Should sum three grades and divide by three if recovery', () => {
-      const expected = { media: 6, message: "Recuperação" }
-      const result = calcularMedia([6,6,6], 'Jhonyklei')
-
-      expect(result).toEqual(expected)
-   })
-
-   it('Should sum three grades and divide by three if reproved', () => {
-      const expected = { media: 3, message: "Reprovado" }
-      const result = calcularMedia([3,3,3], 'Jhonyklei')
-
-      expect(result).toEqual(expected)
+   it('Should error', () => {
+      const result = () => servico.Somar(1, "a")
+      console.log('AQUIIIII')
+      
+      expect(result).toThrowError("Favor informar números");
    })
 
 })
