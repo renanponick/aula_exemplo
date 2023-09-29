@@ -1,8 +1,8 @@
 const { Sequelize } = require('sequelize')
 const { development } = require('./config')
 
-const sequelize = new Sequelize(development)
-sequelize.sync()
+const conexao = new Sequelize(development)
+conexao.sync()
     .then(() => {
         console.log('Conectado ao banco com sucesso!')
     })
@@ -11,4 +11,4 @@ sequelize.sync()
     })
 
 
-module.exports = sequelize
+module.exports = conexao
