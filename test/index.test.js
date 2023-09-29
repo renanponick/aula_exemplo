@@ -5,16 +5,13 @@ describe('Testes do primeiro exercício', () => {
    
    const servico = new ServicoExercicio()
 
-   it('Should sum two numbers', () => {
-      const result = servico.Somar(1, 2)
+   it('Should sum two numbers', async () => {
+      const result = await servico.PegarUm(1)
       
-      expect(result).toBe(3);
-   })
-
-   it('Should error', () => {
-      const result = () => servico.Somar(1, "a")
-      
-      expect(result).toThrowError("Favor informar números");
+      expect(result.id).toBe(1);
+      expect(result.nome).toBe('João da Silva');
+      expect(result.email).toBe('joao@example.com');
+      expect(result.senha).toBe('senha123');
    })
 
 })
