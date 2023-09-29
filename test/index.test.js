@@ -13,7 +13,6 @@ describe('Testes do primeiro exercício', () => {
 
    it('Should error', () => {
       const result = () => servico.Somar(1, "a")
-      console.log('AQUIIIII')
       
       expect(result).toThrowError("Favor informar números");
    })

@@ -3,6 +3,8 @@ const ControllerExercicio = require('../controllers/exercicio')
 
 const controller = new ControllerExercicio()
 const router = express.Router()
-router.post('/api/exercicio', controller.Somar)
+
+router.get('/api/nome/:id', controller.PegarUm)
+router.post('/api/nome', controller.Add)
 
 module.exports = router
