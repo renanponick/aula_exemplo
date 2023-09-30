@@ -1,4 +1,3 @@
-const nomes = Array('Alice', 'Bob', 'Carlos');
 const Pessoa = require('../models/exercicio.js')
 
 class RepositorieExercicio {
@@ -8,22 +7,36 @@ class RepositorieExercicio {
             where: { id }
         });
     }
-
-    Add(nome) {
-        nomes.push(nome); // adiciona no final do array
-
-        // nomes.unshift(nome); // adiciona no incio do array
-
-        return nome;
+    
+    async PegarTodos() {
+        return Pessoa.findAll();
     }
 
-    Delete(id) {
-        nomes.slice(id, 1);
+    async Add(pessoa) {
+        const result = await Pessoa.create(pessoa)
 
-        return id;
+        console.log(result)
+
+        return result
     }
 
+    async Update(id, pessoa) {
+        const result = await Pessoa.update(pessoa, {
+            where: {
+                id
+            }
+        })
 
+        console.log(result)
+
+        return result
+    }
+
+    async Delete(id) {
+        return Pessoa.destroy({
+            where: { id }
+        });
+    }
 
 }
 

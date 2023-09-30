@@ -4,6 +4,7 @@ const conexao = require('../database.js')
 const Pessoa = conexao.define('pessoas', {
     id: {
         primaryKey: true,
+        autoIncrement: true,
         type: DataTypes.INTEGER
     },
     nome: {
@@ -12,7 +13,6 @@ const Pessoa = conexao.define('pessoas', {
     },
     email: {
         type: DataTypes.STRING,
-        unique: true
     },
     senha: {
         type: DataTypes.STRING,
