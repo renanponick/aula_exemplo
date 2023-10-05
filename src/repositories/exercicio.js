@@ -2,9 +2,10 @@ const Pessoa = require('../models/exercicio.js')
 
 class RepositorieExercicio {
 
-    async PegarUm(id) {
+    async PegarUm(id, transaction) {
         return Pessoa.findOne({
-            where: { id }
+            where: { id },
+            transaction
         });
     }
     
@@ -12,10 +13,8 @@ class RepositorieExercicio {
         return Pessoa.findAll();
     }
 
-    async Add(pessoa) {
-        const result = await Pessoa.create(pessoa)
-
-        console.log(result)
+    async Add(pessoa, transaction) {
+        const result = await Pessoa.create(pessoa, { transaction })
 
         return result
     }

@@ -18,18 +18,18 @@ class ServicoExercicio {
         return true
     }
 
-    async PegarUm(id) {
-        return repositorio.PegarUm(id);
+    async PegarUm(id, transaction) {
+        return repositorio.PegarUm(id, transaction);
     }
 
     async PegarTodos() {
         return repositorio.PegarTodos();
     }
 
-    async Add(pessoa) {
+    async Add(pessoa, transaction) {
         this.VerficarPessoa(pessoa)
 
-        return repositorio.Add(pessoa);
+        return repositorio.Add(pessoa, transaction);
     }
 
     async Update(id, pessoa) {
