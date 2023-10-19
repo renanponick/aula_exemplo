@@ -22,6 +22,10 @@ class ServicoExercicio {
         return repositorio.PegarUm(id, transaction);
     }
 
+    async PegarUmPorEmail(email) {
+        return repositorio.PegarUmPorEmail(email);
+    }
+
     async PegarTodos() {
         return repositorio.PegarTodos();
     }

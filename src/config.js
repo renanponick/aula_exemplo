@@ -7,5 +7,6 @@ module.exports = {
         database: process.env.DATABASE_URL,
         host: process.env.HOST,
         dialect: process.env.DIALECT
-    }
+    },
+    secrect: 'M!nhaChav3S3cre3t4'
 }

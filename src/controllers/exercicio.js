@@ -1,8 +1,40 @@
 const ServicoExercicio = require("../services/exercicio")
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
+const config = require("../config");
 
 const servico = new ServicoExercicio()
 
 class ControllerExercicio {
+
+    async Login(req, res) {
+        // const email = req.body.email;
+        // const senha = req.body.senha;
+        const { email, senha } = req.body;
+
+        if(!email || !senha){
+            return res.status(401).json({ message: "E-mail ou senha inválido" });
+        }
+
+        const { dataValues: pessoa } = await servico.PegarUmPorEmail(email)
+
+        if(!pessoa) {
+            console.log('erro1')
+            return res.status(401).json({ message: "E-mail ou senha inválido" });
+        }
+
+        if(!(await bcrypt.compare(senha, pessoa.senha))){
+            console.log('erro2')
+            return res.status(401).json({ message: "E-mail ou senha inválido" });
+        }
+
+        const token = jwt.sign(
+            { id: pessoa.id, email: pessoa.email, nome: pessoa.nome },
+            config.secrect
+        )
+
+        res.json({ token })
+    }
 
     async PegarUm(req, res){
         try {
