@@ -1,8 +1,8 @@
 const { describe, expect, it, beforeAll, afterAll } = require('@jest/globals')
-const ServicoExercicio = require("../src/services/exercicio")
+const Servico = require("../src/services/cliente")
 const conexao = require('../src/database')
 
-describe('Testes pessoas', () => {
+describe('Testes cliente', () => {
 
    beforeAll(async () => {
       this.save = await conexao.transaction()
@@ -11,7 +11,7 @@ describe('Testes pessoas', () => {
       this.save.rollback()
    })
 
-   const servico = new ServicoExercicio()
+   const servico = new Servico()
    
    it('Should get person', async () => {
       const result = await servico.PegarUm(1, this.save)
