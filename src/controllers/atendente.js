@@ -6,9 +6,6 @@ class Atendente {
 
     async PegarUm(req, res){
         try {
-            if(req.session.permissao != 0){
-                throw new Error("Sem permissão")
-            }
             const result = await servico.PegarUm(req.params.id)
             res.status(200).json({
                 atendente: result
@@ -21,9 +18,6 @@ class Atendente {
     
     async PegarTodos(_, res){
         try {
-            if(req.session.permissao != 0){
-                throw new Error("Sem permissão")
-            }
             const result = await servico.PegarTodos()
             res.status(200).json({
                 atendentes: result
@@ -36,9 +30,6 @@ class Atendente {
 
     async Add(req, res){
         try {
-            if(req.session.permissao != 0){
-                throw new Error("Sem permissão")
-            }
             const result = await servico.Add(req.body.atendente)
             res.status(201).json({
                 atendente: result
@@ -51,9 +42,6 @@ class Atendente {
 
     async Update(req, res){
         try {
-            if(req.session.permissao != 0){
-                throw new Error("Sem permissão")
-            }
             const result = await servico.Update(req.params.id, req.body.atendente)
             res.status(200).json({
                 atendente: result
@@ -66,9 +54,6 @@ class Atendente {
 
     async Delete(req, res){
         try {
-            if(req.session.permissao != 0){
-                throw new Error("Sem permissão")
-            }
             await servico.Delete(req.params.id)
             res.status(204).json()
         } catch (error) {
