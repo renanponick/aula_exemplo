@@ -34,7 +34,7 @@ class Repositorio {
     async Update(id, atendente) {
         const result = await Usuario.update(atendente, {
             where: {
-                id
+                id, permissao: 2
             }
         })
 
@@ -43,7 +43,7 @@ class Repositorio {
 
     async Delete(id) {
         return Usuario.destroy({
-            where: { id }
+            where: { id, permissao: 2 }
         });
     }
 
